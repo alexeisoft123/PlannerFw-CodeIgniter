@@ -3,11 +3,15 @@ PlannerFw
 
 PlannerFw is an application layer or middleware between server output and result page on web browser with a 
 collection of setting and rules. Main PlannerFw rules are:
+
 (1). PlannerFw transmits JavaScript code through network instead of HTML page code, PlannerFw automatically 
      compile HTML and CSS code to JavaScript functions.
+     
 (2). Data and presentation separated rule: There is no response including data model and template contents 
      together, data model and template contents can not be output in one same response.
+     
 (3). Presentation rule: Both client and server can assign template or layout template to the result page.
+
 (4). PlannerFw supports JSOM data model and XML data model, which could be retrieved through HTTP/HTTPS and 
      WebSocket/WebSocket Secure, and PlannerFw supports JWT (JSON Web Token) to access data models for 
      authentication and information exchange.
@@ -43,7 +47,10 @@ Documentation and help
 -----------------------
 
 PlannerFw documentation: http://w3plan.net/customer/plannerfw
+
 General inquiries and feedback: contact@w3plan.net
+
 Purchase and licensing inquiries: sales@w3plan.net
+
 Send question tickets: http://w3plan.net/support/index
 

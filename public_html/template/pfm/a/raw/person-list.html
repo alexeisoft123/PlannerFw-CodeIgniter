@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<title>PlannerFw + PHP CodeIgniter Application</title>
+
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+  <div class="content">
+    <h1>PlannerFw + PHP CodeIgniter Application</h1>
+    <div class="paging">
+      <!--%= pfDataSet.pagination %-->
+    </div>
+    <div class="data">
+      <!--%
+        <!-%=
+          '<table border="0" cellpadding="4" cellspacing="0">' + 
+          "<thead><tr>" + 
+          "<th>No</th><th>Name</th><th>Gender</th><th>Date of Birth (yyyy-mm-dd)</th><th>Operations</th>" + 
+          "</tr></thead><tbody>"
+        %->
+        for (i = 0; i < pfDataSet.persons.length; i++)
+        {   
+          <!-%=
+            '<tr><td>' + pfDataSet.persons[i]['id'] + '</td>' +
+            '<td>' + pfDataSet.persons[i]['name'] + '</td>'
+          %->
+          if (pfDataSet.persons[i]['gender'].toUpperCase() == "M") {
+            <!-%= "<td>Male</td>" %->
+          } else {
+            <!-%= "<td>Female</td>" %->
+          }
+          <!-%= 
+            /*
+             *  Using String.fromCharCode(39) to output ' 
+             */
+            '<td>' + pfDataSet.persons[i]['dob'] + '</td>' +
+            '<td>' +
+              '<a href="/person/view/' + pfDataSet.persons[i]['id'] + '" class="view">view</a>' +
+              '<a href="/person/update/'  + pfDataSet.persons[i]['id'] + '" class="update">update</a>' +
+              '<a href="/person/delete/'  + pfDataSet.persons[i]['id'] + '" class="delete" onclick="return confirm(' + String.fromCharCode(39) + 'Are you sure want to delete this person?' + String.fromCharCode(39) + ')">delete</a>' +
+            "</td></tr>"
+          %->
+        }
+        <!-%=
+          "</tbody>" + 
+          "</table>"
+        %->
+      %-->
+    </div><br>
+    <a href="/person/add" class="add">add new data</a>
+  </div>
+</body> 
+
+</html>
